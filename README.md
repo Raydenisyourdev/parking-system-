@@ -1,7 +1,7 @@
 # ParkFlow Localhost Web App
 
 ## Run
-1. Install Python 3.10+.
+
 2. In this folder run: `py -m pip install -r requirements.txt`
 3. Run: `py app.py`
 4. Open: http://localhost:5000
