@@ -1,0 +1,15 @@
+ALGORITHM: Activity Log
+1. START
+2. Detect an important system action.
+3. Create a message describing the action.
+4. Get the current date and time.
+5. Insert the message and time into activity_log.
+6. Save the record.
+7. END
+
+EXAMPLES:
+Vehicle assigned to a space.
+Entry QR verified.
+Vehicle parked.
+Exit QR verified.
+Payment completed.

@@ -1,0 +1,8 @@
+ALGORITHM: Parking Space Release
+1. START
+2. Confirm that payment is complete.
+3. Find the vehicle's parking space.
+4. Change space from OCCUPIED to AVAILABLE.
+5. Change vehicle from EXITING to COMPLETED.
+6. Update the dashboard.
+7. END

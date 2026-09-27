@@ -1,0 +1,23 @@
+ALGORITHM: Vehicle Registration
+1. START
+2. Enter vehicle plate number.
+3. Select an available parking space.
+4. Convert plate number to uppercase and remove spaces.
+5. Check if the plate number is valid.
+6. IF invalid:
+      Display error.
+      STOP.
+7. Check if the selected space is AVAILABLE.
+8. IF not available:
+      Display "That slot is not available".
+      STOP.
+9. Check if the vehicle already has an active record.
+10. IF already active:
+       Display "This vehicle is already active".
+       STOP.
+11. Generate a unique QR token.
+12. Save the vehicle in the database.
+13. Change the space from AVAILABLE to RESERVED.
+14. Record the activity.
+15. Return vehicle details and QR token.
+16. END

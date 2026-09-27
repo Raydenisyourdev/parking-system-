@@ -1,0 +1,13 @@
+ALGORITHM: Dashboard Monitoring
+1. START
+2. Request the current system state.
+3. Get all parking spaces from the database.
+4. Get all active vehicles.
+5. For each parking space:
+      IF AVAILABLE, show an empty space.
+      IF RESERVED, show a reserved space.
+      IF OCCUPIED, show the parked vehicle.
+6. Update dashboard statistics.
+7. Display recent activities.
+8. Repeat when the dashboard requests another update.
+9. END

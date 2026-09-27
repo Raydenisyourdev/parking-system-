@@ -1,0 +1,45 @@
+ALGORITHM: Complete Parking System
+1. START
+2. Admin logs into the system.
+3. IF login is correct, open dashboard.
+4. Admin enters vehicle plate number.
+5. Admin selects an available parking space.
+6. Validate the plate and space.
+7. IF validation fails, display error and return to dashboard.
+8. Generate QR token.
+9. Save vehicle in database.
+10. Change space to RESERVED.
+11. Driver scans QR code.
+12. IF QR is valid:
+       Record entry time.
+       Change vehicle to ENTERING.
+       Start car animation.
+    ELSE:
+       Reject scan.
+13. After animation:
+       Change vehicle to PARKED.
+       Change space to OCCUPIED.
+14. Driver remains parked.
+15. Driver scans QR again when leaving.
+16. IF vehicle is PARKED:
+       Record exit time.
+       Change vehicle to EXITING.
+    ELSE:
+       Reject exit.
+17. Calculate total parking time.
+18. Subtract grace period.
+19. Calculate fee:
+       0 - 30 minutes = KSh 0
+       Over 30 min - 2 hours = KSh 50
+       Over 2 - 4 hours = KSh 100
+       Over 4 - 6 hours = KSh 300
+       Over 6 hours = KSh 500
+20. Display amount and payment methods.
+21. Record payment.
+22. IF payment is successful:
+       Change vehicle to COMPLETED.
+       Change space to AVAILABLE.
+       Update revenue.
+       Record activity.
+23. Update dashboard.
+24. END

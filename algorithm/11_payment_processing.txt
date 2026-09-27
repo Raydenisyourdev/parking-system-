@@ -1,0 +1,13 @@
+ALGORITHM: Payment Processing
+1. START
+2. Calculate the amount to pay.
+3. Display the amount.
+4. Display available payment methods.
+5. Driver selects a payment method.
+6. Record payment in the database.
+7. Mark payment as PAID.
+8. Change vehicle status to COMPLETED.
+9. Change parking space status to AVAILABLE.
+10. Record the activity.
+11. Display payment confirmation.
+12. END

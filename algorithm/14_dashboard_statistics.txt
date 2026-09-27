@@ -1,0 +1,9 @@
+ALGORITHM: Dashboard Statistics
+1. START
+2. Count all parking spaces.
+3. Count AVAILABLE spaces.
+4. Count RESERVED and OCCUPIED spaces.
+5. Calculate total revenue from payments.
+6. Send results to the dashboard.
+7. Display total spaces, available spaces, occupied spaces and revenue.
+8. END

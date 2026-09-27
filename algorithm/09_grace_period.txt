@@ -1,0 +1,10 @@
+ALGORITHM: Grace Period
+1. START
+2. Get total parking time.
+3. Get the grace period.
+4. Calculate:
+      BILLABLE_TIME = TOTAL_TIME - GRACE_PERIOD
+5. IF BILLABLE_TIME is less than 0:
+      Set BILLABLE_TIME to 0.
+6. Return billable time.
+7. END

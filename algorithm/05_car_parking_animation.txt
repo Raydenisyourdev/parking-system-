@@ -1,0 +1,11 @@
+ALGORITHM: Car Parking Animation
+1. START
+2. Get vehicle ID and assigned parking space.
+3. Find the vehicle on the interface.
+4. Find the assigned parking space.
+5. Animate the car moving into the space.
+6. Wait until the animation finishes.
+7. Confirm the vehicle has parked.
+8. Change vehicle status from ENTERING to PARKED.
+9. Change space status from RESERVED to OCCUPIED.
+10. END

@@ -1,0 +1,12 @@
+ALGORITHM: Admin Login
+1. START
+2. Display the login page.
+3. Enter username and password.
+4. Check the username and password.
+5. IF the details are correct:
+      Create admin session.
+      Open dashboard.
+   ELSE:
+      Display invalid login message.
+      Return to login page.
+6. END

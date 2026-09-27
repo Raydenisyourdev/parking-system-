@@ -1,0 +1,23 @@
+ALGORITHM: Payment Calculation
+1. START
+2. Get billable parking time.
+3. Convert the time to minutes and hours.
+4. IF time <= 30 minutes:
+      Amount = KSh 0
+5. ELSE IF time <= 2 hours:
+      Amount = KSh 50
+6. ELSE IF time <= 4 hours:
+      Amount = KSh 100
+7. ELSE IF time <= 6 hours:
+      Amount = KSh 300
+8. ELSE:
+      Amount = KSh 500
+9. Return amount.
+10. END
+
+PAYMENT RULES:
+0 - 30 minutes = KSh 0
+Over 30 min - 2 hours = KSh 50
+Over 2 - 4 hours = KSh 100
+Over 4 - 6 hours = KSh 300
+Over 6 hours = KSh 500

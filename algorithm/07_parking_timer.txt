@@ -1,0 +1,9 @@
+ALGORITHM: Parking Timer
+1. START
+2. When entry QR is verified, save ENTRY_TIME.
+3. Vehicle remains parked.
+4. When exit QR is scanned, save EXIT_TIME.
+5. Calculate:
+      TOTAL_TIME = EXIT_TIME - ENTRY_TIME
+6. Return total parking time.
+7. END

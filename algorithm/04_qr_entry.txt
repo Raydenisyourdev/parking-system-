@@ -1,0 +1,17 @@
+ALGORITHM: QR Entry
+1. START
+2. Driver scans QR code.
+3. Read the QR token.
+4. Find the vehicle linked to the token.
+5. Check if the token is valid.
+6. IF invalid:
+      Reject the scan.
+      STOP.
+7. Check the vehicle status.
+8. IF the vehicle can enter:
+      Record entry time.
+      Change status to ENTERING.
+      Start entry process.
+   ELSE:
+      Reject entry.
+9. END

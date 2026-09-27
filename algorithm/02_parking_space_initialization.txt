@@ -1,0 +1,12 @@
+ALGORITHM: Parking Space Initialization
+1. START
+2. Connect to the database.
+3. Check if parking spaces already exist.
+4. IF they do not exist:
+      Create 24 parking spaces.
+      Give each space a unique number.
+      Set each space to AVAILABLE.
+      Save them in the database.
+5. ELSE:
+      Continue using the existing spaces.
+6. END

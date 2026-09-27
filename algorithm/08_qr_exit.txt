@@ -1,0 +1,15 @@
+ALGORITHM: QR Exit
+1. START
+2. Driver scans QR code.
+3. Find the vehicle using the QR token.
+4. Check whether the vehicle exists.
+5. Check whether vehicle status is PARKED.
+6. IF not PARKED:
+      Reject exit.
+      STOP.
+7. Record EXIT_TIME.
+8. Change status from PARKED to EXITING.
+9. Calculate parking duration.
+10. Calculate parking fee.
+11. Display payment information.
+12. END
