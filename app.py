@@ -8,18 +8,26 @@ DEMO_MODE=True; GRACE_SECONDS=10 if DEMO_MODE else 120; FIRST_HOUR_RATE=50; EXTR
 
 def db():
  c=sqlite3.connect(DB); c.row_factory=sqlite3.Row; return c
+
 def now(): return datetime.now().isoformat(timespec='seconds')
+
 def log(msg):
  c=db(); c.execute('INSERT INTO activity_log(message,created_at) VALUES(?,?)',(msg,now())); c.commit(); c.close()
+
 def init():
  c=db(); c.executescript('''CREATE TABLE IF NOT EXISTS parking_slots(id INTEGER PRIMARY KEY AUTOINCREMENT,slot_number TEXT UNIQUE,status TEXT NOT NULL DEFAULT "available"); CREATE TABLE IF NOT EXISTS vehicles(id INTEGER PRIMARY KEY AUTOINCREMENT,plate_number TEXT NOT NULL,slot_id INTEGER NOT NULL,entry_time TEXT,exit_time TEXT,status TEXT NOT NULL DEFAULT "pending",qr_token TEXT,FOREIGN KEY(slot_id) REFERENCES parking_slots(id)); CREATE TABLE IF NOT EXISTS payments(id INTEGER PRIMARY KEY AUTOINCREMENT,vehicle_id INTEGER NOT NULL,amount REAL NOT NULL,payment_method TEXT NOT NULL,payment_time TEXT NOT NULL,status TEXT NOT NULL DEFAULT "paid",FOREIGN KEY(vehicle_id) REFERENCES vehicles(id)); CREATE TABLE IF NOT EXISTS activity_log(id INTEGER PRIMARY KEY AUTOINCREMENT,message TEXT NOT NULL,created_at TEXT NOT NULL);''')
  if c.execute('SELECT COUNT(*) n FROM parking_slots').fetchone()['n']==0:
   for i in range(24): c.execute('INSERT INTO parking_slots(slot_number,status) VALUES(?,"available")',(f'{chr(65+i//12)}{i%12+1:02d}',))
  c.commit(); c.close()
+
+
+
 def logged(): return 'admin' in session
 @app.route('/')
+
 def home(): return redirect(url_for('dashboard' if logged() else 'login'))
 @app.route('/login',methods=['GET','POST'])
+
 def login():
  if request.method=='POST':
   if request.form.get('username')=='admin' and request.form.get('password')=='parkflow': session['admin']='admin'; return redirect(url_for('dashboard'))
