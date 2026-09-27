@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for, session, jsonify, flash
 import sqlite3, os, math, uuid
 from datetime import datetime
+
 BASE=os.path.dirname(os.path.abspath(__file__)); DB=os.path.join(BASE,'parking.db')
 app=Flask(__name__); app.secret_key='parkflow-local-demo-secret'
 DEMO_MODE=True; GRACE_SECONDS=10 if DEMO_MODE else 120; FIRST_HOUR_RATE=50; EXTRA_HOUR_RATE=30
@@ -69,4 +70,5 @@ def pay(vid):
  if not logged(): return jsonify(error='unauthorized'),401
  d=request.get_json(); v,t,b,a=calc(vid); method=d.get('method','M-PESA'); c=db(); c.execute('INSERT INTO payments(vehicle_id,amount,payment_method,payment_time) VALUES(?,?,?,?)',(vid,a,method,now())); c.execute('UPDATE vehicles SET status="completed" WHERE id=?',(vid,)); c.execute('UPDATE parking_slots SET status="available" WHERE id=?',(v['slot_id'],)); c.commit(); c.close(); log(f'💰 {v["plate_number"]} paid KSh {a:,.0f} via {method}'); return jsonify(ok=True,amount=a)
 init()
-if __name__=='__main__': app.run(host='127.0.0.1',port=5000,debug=True)
+if __name__=='__main__': 
+    app.run(host='127.0.0.1',port=5000,debug=True)
